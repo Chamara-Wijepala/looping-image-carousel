@@ -1,3 +1,4 @@
+/* reset */
 *,
 *::before,
 *::after {
@@ -20,4 +21,63 @@ picture,
 svg {
 	max-width: 100%;
 	display: block;
+}
+
+/* general */
+:root {
+	--carousel-width: 80em;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	background-color: #202124;
+}
+
+.container {
+	max-width: var(--carousel-width);
+	margin-inline: auto;
+}
+
+.carousel {
+	position: relative;
+}
+
+.slide {
+	display: flex;
+	overflow: scroll;
+	scrollbar-width: none;
+}
+.slide::-webkit-scrollbar {
+	display: none;
+}
+
+.panel {
+	min-width: calc(var(--carousel-width) / 2);
+	height: calc(var(--carousel-width) / 4);
+	padding: 1rem 2rem;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.panel > image {
+	width: auto;
+	height: 100%;
+}
+
+.carousel > button {
+	border: none;
+	border-radius: 50%;
+	width: 4rem;
+	aspect-ratio: 1 / 1;
+	padding: 1rem;
+	background-color: #3c4042;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+.carousel > .right {
+	right: 0;
 }
